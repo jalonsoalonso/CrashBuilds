@@ -37,25 +37,31 @@ void f1(int *v)
 void f2(int *v)
 {
 	printf("Step 0\n");
-	if (v[0] > 0)
+	for (int i = 0; i < 10; ++i)
 	{
-		printf("v[0] not initialized but read it\n");
+		printf("v[%d] = %d\n", i, v[i]);
 	}
 
 	printf("Step 1\n");
-	printf("%d\n", v[2]);
-	v[2] = 0; 
+	if (v[0] > 0)
+	{
+		printf("v[0] value is greater than 0\n");
+	}
 
 	printf("Step 2\n");
 	printf("%d\n", v[2]);
+	v[2] = 0; 
 
 	printf("Step 3\n");
+	printf("%d\n", v[2]);
+
+	printf("Step 4\n");
 }
 
 int main()
 {
 	enum { TEST1, TEST2, TEST3 };
-	int test = TEST1;
+	int test = TEST2;
 
 	int vec[2];
 	int *p = new int[2];
